@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>Number <span>Guesser</span></h1>
+    </header>
+    <section>
+      <input id="guess" type="number" min="1" max="100" placeholder="Enter your guess (1-100)" oninput="clearBTN.disabled = false;">
+      <div class="container1">
+        <button id="submit">Submit</button>
+        <button id="clear-input">Clear Input</button>
+      </div>
+      <div class="container2">
+        <h2 id="lastGuessWas"></h2>
+        <h2 id="lastGuessNum"></h2>
+        <h2 id="outcomeText">Well, go on...</h2>
+      </div>
+      <button id="reset">Reset Game</button>
+    </section>
+
+
+
+  </body>
+  <script type="text/javascript" src="index.js"></script>
+
+</html>
+
+
+
+
+<!-- An input field for guessing the number
+A button for submitting a guess
+A button for clearing the input field
+A button that resets the game -->

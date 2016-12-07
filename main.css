@@ -1,0 +1,123 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+height: 40px;
+background-color: #404041;
+}
+
+header h1 {
+  text-align: center;
+  padding-top: 10px;
+  font-family: 'Open Sans';
+  font-size: 20px;
+  font-weight: 700;
+  color: #ED458B;
+}
+
+span {
+  color: white;
+  font-weight: 300;
+}
+
+section {
+  text-align: center;
+  margin: 20px auto;
+
+}
+
+#guess {
+  width: 300px;
+  text-align: center;
+}
+
+.container1 {
+  margin: 20px auto;
+}
+.container2 {
+  margin: 20px auto;
+}
+
+h2 {
+  font-family: "Open Sans";
+  color: #404041;
+}
+
+#lastGuessNum {
+  font-size: 75px;
+  font-weight: 700;
+  color: #ED458B;
+}
+
+
+/*ButtonStyling*/
+
+#submit {
+  color: #FFFFFF;
+  background-color: #929497;
+  border-style: hidden;
+  border-radius: 15px;
+  width: 150px;
+}
+
+#submit:hover:enabled {
+  background-color: #EB008B;
+}
+
+#clear-input {
+  color: #FFFFFF;
+  background-color: #929497;
+  border-style: hidden;
+  border-radius: 15px;
+  width: 150px;
+
+}
+
+#clear-input:disabled {
+  background-color: #D0D2D3;
+  cursor: not-allowed;
+
+}
+
+#clear-input:hover:enabled {
+  background-color: #EB008B;
+}
+
+#reset {
+  color: #FFFFFF;
+  background-color: #929497;
+  border-style: hidden;
+  border-radius: 15px;
+  width: 300px;
+}
+
+#reset:hover:enabled {
+  background-color: #EB008B;
+}
+
+#reset:disabled {
+  background-color: #D0D2D3;
+  cursor: not-allowed;
+}
+
+
+
+
+/*Responsive shit*/
+
+@media (max-width: 500px) {
+  #submit {
+    width: 75%;
+    margin-bottom: 10px;
+  }
+  #clear-input {
+    width: 75%;
+  }
+  #guess {
+    width: 75%;
+  }
+  #reset {
+    width: 75%;
+  }
+}
