@@ -39,10 +39,10 @@ submitBTN.addEventListener('click', function(){
     return alert("Dassit!");
     console.log("boom!");
   } else if (userGuess < randomNumber) {
-    outcomeText.innerText = "... and it was too low.";
+    outcomeText.innerText = "... and it was too low. Try again.";
     console.log('too low');
   } else {
-    outcomeText.innerText = "... and it was too high.";
+    outcomeText.innerText = "... and it was too high. Try again.";
     console.log('too high');
   }
 });
@@ -72,7 +72,7 @@ resetBTN.addEventListener('click', function(){
   resetBTN.disabled = true;
   guessInput.value = "";
   outcomeText.innerText = "";
-  lastGuessWas.innerText = "Well, go on...";
+  lastGuessWas.innerText = "...";
   lastGuessNum.innerText = "";
   clearBTN.disabled = true;
   console.log(randomNumber);
@@ -90,11 +90,13 @@ function changeRange (min, max) {
 newMin.addEventListener('keyup', function() {
   min = parseInt(newMin.value);
   randomNumber = changeRange(min, max);
+  console.log(randomNumber);
 });
 
 newMax.addEventListener('keyup', function() {
   max = parseInt(newMax.value);
   randomNumber = changeRange(min, max);
+  console.log(randomNumber);
 });
 
 resetNew.addEventListener('click', function(){

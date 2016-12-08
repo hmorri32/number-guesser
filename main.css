@@ -41,13 +41,17 @@ section {
 #new-max {
   width: 150px;
   text-align: center;
-
 }
+/*Contain yo'self*/
 
 .container1 {
   margin: 20px auto;
 }
 .container2 {
+  margin: 20px auto;
+}
+
+.range-change {
   margin: 20px auto;
 }
 
@@ -83,13 +87,11 @@ h2 {
   border-style: hidden;
   border-radius: 15px;
   width: 150px;
-
 }
 
 #clear-input:disabled {
   background-color: #D0D2D3;
   cursor: not-allowed;
-
 }
 
 #clear-input:hover:enabled {
@@ -113,6 +115,22 @@ h2 {
   cursor: not-allowed;
 }
 
+#resetNew {
+color: #FFFFFF;
+background-color: #929497;
+border-style: hidden;
+border-radius: 15px;
+width: 300px;
+}
+
+#resetNew:hover:enabled {
+  background-color: #EB008B;
+}
+
+#resetNew:disabled {
+  background-color: #D0D2D3;
+  cursor: not-allowed;
+}
 
 
 
@@ -131,5 +149,15 @@ h2 {
   }
   #reset {
     width: 75%;
+  }
+  #resetNew {
+    width: 75%;
+  }
+  #new-min {
+    width: 74%;
+    margin-bottom: 10px;
+  }
+  #new-max {
+    width: 74%;
   }
 }
