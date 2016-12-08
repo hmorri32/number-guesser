@@ -5,43 +5,36 @@
     <link rel="stylesheet" type="text/css" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
   </head>
   <body>
     <header>
       <h1>Number <span>Guesser</span></h1>
     </header>
+
     <section>
-      <input id="guess" type="number" min="1" max="100" placeholder="Enter your guess (1-100)" oninput="clearBTN.disabled = false;">
-      <div class="container1">
-        <button id="submit">Submit</button>
-        <button id="clear-input">Clear Input</button>
+      <input class ="_300 responsive" id="guess" type="number" min="1" max="100" placeholder="Enter your guess (1-100)" oninput="clearBTN.disabled = false;">
+      <div class="container">
+        <button class="button one-fifty responsive" id="submit">Submit</button>
+        <button class="button one-fifty responsive" id="clear-input">Clear Input</button>
       </div>
-      <div class="container2">
+      <div class="container">
         <h2 id="lastGuessWas"></h2>
         <h2 id="lastGuessNum"></h2>
         <h2 id="outcomeText"></h2>
       </div>
-      <!-- I moved this button to da bottom. -->
-      <!-- <button id="reset">Reset Game</button> -->
-    </section>
-    <section class="range-change">
-      <h2> Or, if you're feelin' clever...</h2>
-      <br>
-      <input id="new-min" type="number" placeholder="Input your own minimum #" oninput="resetNew.disabled = false;">
-      <input id="new-max" type="number" placeholder="Input your own maximum #"
-      oninput="resetNew.disabled = false;">
-      <br>
-      <input id="guess-2" type="number" placeholder="Enter your guess." oninput="submitBTN2.disabled = false;">
-      <br>
-      <br>
-      <button id="submit-2">Submit</button>
-      <button id="resetNew"> Clear New Range </button>
-      <!-- Do this if you have time. Reset button at the bottom of this shit, more UX friendly. Or maybe just move the original reset down heeaaaahhh -->
-      <!-- <button id="reset-all"> Reset </button> -->
-      <button id="reset">Reset Game</button>
+    <button class="button three-hundred responsive" id="reset">Reset Game</button>
 
+    <div class="container">
+      <h2> Or, if you're feelin' clever...</h2>
+      <input class="_300 responsive" id="new-min" type="number" placeholder="Input your own minimum #" oninput="resetNew.disabled = false;">
+      <input class ="_300 responsive" id="new-max" type="number" placeholder="Input your own maximum #"
+      oninput="resetNew.disabled = false;">
+      <button class ="button three-hundred responsive"id="resetNew"> Clear New Range </button>
+    </div>
     </section>
+
   </body>
   <script type="text/javascript" src="index.js"></script>
 </html>

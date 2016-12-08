@@ -18,9 +18,9 @@ var max = 100;
 resetNew.disabled = true;
 
 // For the second submit button i decided to make.
-
-var submitBTN2 = document.getElementById('submit-2');
-submitBTN2.disabled = true;
+//
+// var submitBTN2 = document.getElementById('submit-2');
+// submitBTN2.disabled = true;
 
 var guessTWO = document.getElementById('guess-2');
 
@@ -75,30 +75,30 @@ function disableResetNew() {
 };
 
 // FOr using the clever guy submit
-submitBTN2.addEventListener('click', function(){
-  var userGuess = parseInt(guessTWO.value);
-  resetBTN.disabled = false;
-  if (guessTWO.value === ""){
-    return alert("Input an actual number pls.");
-  } else if (userGuess < 1 || userGuess > 100) {
-    return alert("Input a number between 1 and 100 pls.");
-  }
-
-  lastGuessNum.innerText = userGuess;
-  console.log(userGuess);
-  lastGuessWas.innerText = "Your last guess was:"
-  if (userGuess === randomNumber) {
-    outcomeText.innerText = "... and that's exactly what I had in mind!";
-    return alert("Dassit!");
-    console.log("boom!");
-  } else if (userGuess < randomNumber) {
-    outcomeText.innerText = "... and it was too low. Try again.";
-    console.log('too low');
-  } else {
-    outcomeText.innerText = "... and it was too high. Try again.";
-    console.log('too high');
-  }
-});
+// submitBTN2.addEventListener('click', function(){
+//   var userGuess = parseInt(guessTWO.value);
+//   resetBTN.disabled = false;
+//   if (guessTWO.value === ""){
+//     return alert("Input an actual number pls.");
+//   } else if (userGuess < 1 || userGuess > 100) {
+//     return alert("Input a number between 1 and 100 pls.");
+//   }
+//
+//   lastGuessNum.innerText = userGuess;
+//   console.log(userGuess);
+//   lastGuessWas.innerText = "Your last guess was:"
+//   if (userGuess === randomNumber) {
+//     outcomeText.innerText = "... and that's exactly what I had in mind!";
+//     return alert("Dassit!");
+//     console.log("boom!");
+//   } else if (userGuess < randomNumber) {
+//     outcomeText.innerText = "... and it was too low. Try again.";
+//     console.log('too low');
+//   } else {
+//     outcomeText.innerText = "... and it was too high. Try again.";
+//     console.log('too high');
+//   }
+// });
 
 resetBTN.addEventListener('click', function(){
   randomNumber = Math.floor(Math.random() * 100 + 1);
@@ -112,9 +112,7 @@ resetBTN.addEventListener('click', function(){
   newMax.value = "";
   newMin.value = "";
   resetNew.disabled = true;
-  submitBTN2.disabled = true
-  guessTWO.value = "";
-
+  // submitBTN2.disabled = true
   // Reset game, get new random number, consolelog that shit empty input string, reset all btns.. etc.
 });
 
@@ -144,7 +142,7 @@ resetNew.addEventListener('click', function(){
   guessTWO.value = "";
 
 });
-
+// Key up for check for text in input
 
 // STUFF I COULD ALSO DO...
 // refactor probably.

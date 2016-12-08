@@ -24,47 +24,35 @@ span {
 section {
   text-align: center;
   margin: 20px auto;
-
 }
 
-/*Inputs*/
-#guess {
-  width: 300px;
-  text-align: center;
-}
-
-#new-min {
-  width: 150px;
-  text-align: center;
-}
-
-#new-max {
-  width: 150px;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-#guess-2 {
-  width: 300px;
-  text-align: center;
-}
-
-/*Contain yo'self*/
-.container1 {
+.container {
   margin: 20px auto;
-}
-.container2 {
-  margin: 20px auto;
-}
+  text-align: center;
 
-.range-change {
-  margin: 20px auto;
 }
 
 h2 {
   font-family: "Open Sans";
   color: #404041;
 }
+
+/*Inputs*/
+._300 {
+  width: 300px;
+  text-align: center;
+  /*margin: inherit;*/
+}
+
+._150 {
+  width: 150px;
+  text-align: center;
+}
+
+#new-max {
+  margin-bottom: 10px;
+}
+
 
 #lastGuessNum {
   font-size: 75px;
@@ -74,138 +62,65 @@ h2 {
 
 
 /*ButtonStyling*/
-#submit {
+.button {
   color: #FFFFFF;
   background-color: #929497;
   border-style: hidden;
   border-radius: 15px;
-  width: 150px;
 }
 
-#submit:hover:enabled {
+.button:hover:enabled {
   background-color: #EB008B;
 }
 
-#clear-input {
-  color: #FFFFFF;
-  background-color: #929497;
-  border-style: hidden;
-  border-radius: 15px;
-  width: 150px;
-}
-
-#clear-input:disabled {
+.button:disabled {
   background-color: #D0D2D3;
   cursor: not-allowed;
 }
 
-#clear-input:hover:enabled {
-  background-color: #EB008B;
+.one-fifty {
+  width: 150px;
 }
 
-#reset {
-  color: #FFFFFF;
-  background-color: #929497;
-  border-style: hidden;
-  border-radius: 15px;
+.three-hundred {
   width: 300px;
 }
-
-#reset:hover:enabled {
-  background-color: #EB008B;
-}
-
-#reset:disabled {
-  background-color: #D0D2D3;
-  cursor: not-allowed;
-}
-
-#submit-2 {
-  color: #FFFFFF;
-  background-color: #929497;
-  border-style: hidden;
-  border-radius: 15px;
-  width: 150px;
-}
-
-#submit-2:hover:enabled {
-  background-color: #EB008B;
-}
-
-
-#submit-2:disabled {
-  background-color: #D0D2D3;
-  cursor: not-allowed;
-}
-
-#resetNew {
-color: #FFFFFF;
-background-color: #929497;
-border-style: hidden;
-border-radius: 15px;
-width: 150px;
-margin-bottom: 20px;
-}
-
-#resetNew:hover:enabled {
-  background-color: #EB008B;
-}
-
-#resetNew:disabled {
-  background-color: #D0D2D3;
-  cursor: not-allowed;
-}
-
-#reset-all {
-  color: #FFFFFF;
-  background-color: #929497;
-  border-style: hidden;
-  border-radius: 15px;
-  width: 300px;
-}
-
-#reset-all:disabled {
-  background-color: #D0D2D3;
-  cursor: not-allowed;
-}
-
-#resetNew:hover:enabled {
-  background-color: #EB008B;
-}
-
 
 /*Responsive shit*/
 
 @media (max-width: 500px) {
-  #submit {
+  .responsive {
+    width: 75%;
+  }
+  /*#submit {
     width: 75%;
     margin-bottom: 20px;
   }
   #clear-input {
     width: 75%;
-  }
-  #guess {
+  }*/
+  /*#guess {
     width: 75%;
-  }
-  #reset {
+  }*/
+  /*#reset {
     width: 75%;
-  }
-  #resetNew {
+  }*/
+  /*#resetNew {
     width: 75%;
-  }
-  #new-min {
+  }*/
+  /*#new-min {
     width: 75%;
     margin-bottom: 20px;
-  }
-  #new-max {
+  }*/
+  /*#new-max {
     width: 74%;
     margin-bottom: 20px;
-  }
-  #submit-2 {
+  }*/
+  /*#submit-2 {
     width: 75%;
     margin-bottom: 20px;
-  }
-  #guess-2 {
+  }*/
+  /*#guess-2 {
     width: 75%;
-  }
+  }*/
 }
