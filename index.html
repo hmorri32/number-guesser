@@ -6,8 +6,9 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Number Guesser</title>
   </head>
+
   <body>
     <header>
       <h1>Number <span>Guesser</span></h1>
@@ -19,30 +20,30 @@
         <button class="button one-fifty responsive" id="submit">Submit</button>
         <button class="button one-fifty responsive" id="clear-input">Clear Input</button>
       </div>
+
       <div class="container">
         <h2 id="lastGuessWas"></h2>
         <h2 id="lastGuessNum"></h2>
         <h2 id="outcomeText"></h2>
       </div>
-    <button class="button three-hundred responsive" id="reset">Reset Game</button>
 
-    <div class="container">
-      <h2> Or, if you're feelin' clever...</h2>
-      <input class="_300 responsive" id="new-min" type="number" placeholder="Input your own minimum #" oninput="resetNew.disabled = false;">
-      <input class ="_300 responsive" id="new-max" type="number" placeholder="Input your own maximum #"
+      <button class="button three-hundred responsive" id="reset">Reset Game</button>
+      <div class="container">
+        <h2> Or, choose your own range...</h2>
+      </div>
+
+      <div class=container>
+        <input class="_300 responsive" id="new-min" type="number" placeholder="Input your minimum #" oninput="resetNew.disabled = false;">
+      </div>
+
+      <div class="container">
+        <input class ="_300 responsive" id="new-max" type="number" placeholder="Input your maximum #"
       oninput="resetNew.disabled = false;">
+      </div>
+      
       <button class ="button three-hundred responsive"id="resetNew"> Clear New Range </button>
-    </div>
     </section>
 
   </body>
   <script type="text/javascript" src="index.js"></script>
 </html>
-
-
-
-
-<!-- An input field for guessing the number
-A button for submitting a guess
-A button for clearing the input field
-A button that resets the game -->
