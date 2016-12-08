@@ -9,6 +9,14 @@ var randomNumber;
 resetBTN.disabled = true;
 clearBTN.disabled = true;
 
+var newMin = document.getElementById('new-min');
+var newMax = document.getElementById('new-max');
+var resetNew = document.getElementById('resetNew');
+var min = 0;
+var max = 100;
+resetNew.disabled = true;
+
+
 // window on load Generate new number on load and then console.logs it
 window.onload = randomNumber = Math.floor(Math.random() * 100 + 1);
 console.log(randomNumber);
@@ -18,16 +26,16 @@ submitBTN.addEventListener('click', function(){
   var userGuess = parseInt(guessInput.value);
   resetBTN.disabled = false;
   if (guessInput.value === ""){
-    return alert("Error! Input an actual number.");
+    return alert("Input an actual number pls.");
   } else if (userGuess < 1 || userGuess > 100) {
-    return alert("That number is outside of my parameters. Nerd.");
+    return alert("Input a number between 1 and 100 pls.");
   }
 
   lastGuessNum.innerText = userGuess;
   console.log(userGuess);
   lastGuessWas.innerText = "Your last guess was:"
   if (userGuess === randomNumber) {
-    outcomeText.innerText = "... and that's what I had in mind!";
+    outcomeText.innerText = "... and that's exactly what I had in mind!";
     return alert("Dassit!");
     console.log("boom!");
   } else if (userGuess < randomNumber) {
@@ -46,10 +54,16 @@ clearBTN.addEventListener('click', function(){
   console.log("Clear was clicked");
 });
 
-// Function helper that clears BTN
+// Function helper that clears BTN and clear input
 function disableClearBTN() {
   if (guessInput.value === "") {
     clearBTN.disabled = true;
+  }
+};
+
+function disableResetNew() {
+  if (newMax.value === "") {
+    resetNew.disabled = true;
   }
 };
 
@@ -62,6 +76,44 @@ resetBTN.addEventListener('click', function(){
   lastGuessNum.innerText = "";
   clearBTN.disabled = true;
   console.log(randomNumber);
-
-  // Reset game, get new random number, consolelog that shit empty input string, reset all btns.. etc. 
+  newMax.value = "";
+  newMin.value = "";
+  // Reset game, get new random number, consolelog that shit empty input string, reset all btns.. etc.
 });
+
+// CHANGE RANGE
+
+function changeRange (min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+};
+
+newMin.addEventListener('keyup', function() {
+  min = parseInt(newMin.value);
+  randomNumber = changeRange(min, max);
+});
+
+newMax.addEventListener('keyup', function() {
+  max = parseInt(newMax.value);
+  randomNumber = changeRange(min, max);
+});
+
+resetNew.addEventListener('click', function(){
+  newMax.value = "";
+  newMin.value = "";
+  randomNumber = Math.floor(Math.random() * 100 + 1);
+  console.log(randomNumber);
+  resetNew.disabled = true;
+});
+
+
+// resetNew.addEventListener('click', function() {
+//   newMin.innerText = "dfsfd";
+// });
+
+
+// STUFF I COULD ALSO DO...
+// submitNew.addEventListener('click')
+// var submitNew = document.getElementById('submit-new');
+// var newMin = document.getElementById('new-min');
+// var newMax = document.getElementById('new-max');
+// var submitNew = document.getElementById('submit-new')

@@ -27,9 +27,21 @@ section {
 
 }
 
+/*Inputs*/
 #guess {
   width: 300px;
   text-align: center;
+}
+
+#new-min {
+  width: 150px;
+  text-align: center;
+}
+
+#new-max {
+  width: 150px;
+  text-align: center;
+
 }
 
 .container1 {
