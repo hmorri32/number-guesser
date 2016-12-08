@@ -9,12 +9,14 @@ var randomNumber;
 resetBTN.disabled = true;
 clearBTN.disabled = true;
 
+// Change input stuff
 var newMin = document.getElementById('new-min');
 var newMax = document.getElementById('new-max');
 var resetNew = document.getElementById('resetNew');
 var min = 0;
 var max = 100;
 resetNew.disabled = true;
+
 // For the second submit button i decided to make.
 
 var submitBTN2 = document.getElementById('submit-2');
@@ -52,7 +54,7 @@ submitBTN.addEventListener('click', function(){
   }
 });
 
-
+// disable clear
 clearBTN.addEventListener('click', function(){
   guessInput.value = "";
   disableClearBTN();
@@ -73,7 +75,6 @@ function disableResetNew() {
 };
 
 // FOr using the clever guy submit
-
 submitBTN2.addEventListener('click', function(){
   var userGuess = parseInt(guessTWO.value);
   resetBTN.disabled = false;
@@ -118,7 +119,6 @@ resetBTN.addEventListener('click', function(){
 });
 
 // CHANGE RANGE
-
 function changeRange (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
@@ -146,7 +146,5 @@ resetNew.addEventListener('click', function(){
 });
 
 
-
-
-
 // STUFF I COULD ALSO DO...
+// refactor probably.
