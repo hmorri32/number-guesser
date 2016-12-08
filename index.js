@@ -50,7 +50,7 @@ submitBTN.addEventListener('click', function(){
 
 clearBTN.addEventListener('click', function(){
   guessInput.value = "";
-  disableClearBTN();
+  disableClearBTN(); 
   console.log("Clear was clicked");
 });
 
@@ -78,6 +78,8 @@ resetBTN.addEventListener('click', function(){
   console.log(randomNumber);
   newMax.value = "";
   newMin.value = "";
+  resetNew.disabled = true;
+
   // Reset game, get new random number, consolelog that shit empty input string, reset all btns.. etc.
 });
 
@@ -108,14 +110,7 @@ resetNew.addEventListener('click', function(){
 });
 
 
-// resetNew.addEventListener('click', function() {
-//   newMin.innerText = "dfsfd";
-// });
+
 
 
 // STUFF I COULD ALSO DO...
-// submitNew.addEventListener('click')
-// var submitNew = document.getElementById('submit-new');
-// var newMin = document.getElementById('new-min');
-// var newMax = document.getElementById('new-max');
-// var submitNew = document.getElementById('submit-new')
