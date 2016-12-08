@@ -41,10 +41,7 @@ section {
 #new-max {
   width: 150px;
   text-align: center;
-}
-#new-min {
-
-  text-align: center;
+  margin-bottom: 10px;
 }
 
 #guess-2 {
@@ -186,6 +183,7 @@ width: 300px;
   }
   #new-max {
     width: 74%;
+    margin-bottom: 10px;
   }
   #submit-2 {
     width: 75%;
