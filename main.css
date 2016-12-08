@@ -47,6 +47,11 @@ section {
   text-align: center;
 }
 
+#guess-2 {
+  width: 300px;
+  text-align: center;
+}
+
 /*Contain yo'self*/
 
 .container1 {
@@ -120,6 +125,24 @@ h2 {
   cursor: not-allowed;
 }
 
+#submit-2 {
+  color: #FFFFFF;
+  background-color: #929497;
+  border-style: hidden;
+  border-radius: 15px;
+  width: 300px;
+}
+
+#submit-2:hover:enabled {
+  background-color: #EB008B;
+}
+
+
+#submit-2:disabled {
+  background-color: #D0D2D3;
+  cursor: not-allowed;
+}
+
 #resetNew {
 color: #FFFFFF;
 background-color: #929497;
@@ -136,7 +159,6 @@ width: 300px;
   background-color: #D0D2D3;
   cursor: not-allowed;
 }
-
 
 
 /*Responsive shit*/
@@ -164,5 +186,11 @@ width: 300px;
   }
   #new-max {
     width: 74%;
+  }
+  #submit-2 {
+    width: 75%;
+  }
+  #guess-2 {
+    width: 75%;
   }
 }
