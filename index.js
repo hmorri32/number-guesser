@@ -104,7 +104,7 @@ resetBTN.addEventListener('click', function(){
   resetBTN.disabled = true;
   guessInput.value = "";
   outcomeText.innerText = "";
-  lastGuessWas.innerText = "...";
+  lastGuessWas.innerText = "";
   lastGuessNum.innerText = "";
   clearBTN.disabled = true;
   console.log(randomNumber);
@@ -141,6 +141,8 @@ resetNew.addEventListener('click', function(){
   randomNumber = Math.floor(Math.random() * 100 + 1);
   console.log(randomNumber);
   resetNew.disabled = true;
+  guessTWO.value = "";
+
 });
 
 
