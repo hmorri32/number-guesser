@@ -18,12 +18,11 @@ var userGuess = parseInt(guessInput.value);
 resetNew.disabled = true;
 resetBTN.disabled = true;
 clearBTN.disabled = true;
-console.log(randomNumber);
 
+// Enables clear button after user inputs guess
 guessInput.addEventListener('keyup', function(){
   clearBTN.disabled = false;
 });
-
 
 submitBTN.addEventListener('click', function(){
   var userGuess = parseInt(guessInput.value);
@@ -33,6 +32,7 @@ submitBTN.addEventListener('click', function(){
   lastGuessWas.innerText = "Your last guess was:"
   userGuessHelper();
 });
+
 // Helper Functions for Submit Button
 function alertHelper() {
   lastGuessNum.innerText = userGuess;
@@ -73,7 +73,6 @@ resetBTN.addEventListener('click', function(){
   disableButtons();
   resetInputFieldValue();
   resetGuessText();
-  console.log(randomNumber);
 });
 // reset helper functions
 function resetGuessText (){
@@ -102,13 +101,11 @@ function changeRange (min, max) {
 newMin.addEventListener('keyup', function() {
   min = parseInt(newMin.value);
   randomNumber = changeRange(min, max);
-  console.log(randomNumber);
 });
 
 newMax.addEventListener('keyup', function() {
   max = parseInt(newMax.value);
   randomNumber = changeRange(min, max);
-  console.log(randomNumber);
 });
 
 // reset new parameters
@@ -116,17 +113,16 @@ resetNew.addEventListener('click', function(){
   randomNumber = Math.floor(Math.random() * 100 + 1);
   clearOwnRangeSection();
   disableClearNewBtn();
-  console.log(randomNumber);
 });
 
 function clearOwnRangeSection (){
   newMax.value = "";
   newMin.value = "";
-}
+};
 
 function disableClearNewBtn (){
   resetNew.disabled = true;
-}
+};
 
 // Input field keyup to enable Clear New Range btn
 newMin.addEventListener('keyup', function(){

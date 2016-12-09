@@ -82,7 +82,6 @@ h2 {
 }
 
 /*Responsive shit*/
-
 @media (max-width: 500px) {
   .responsive {
     width: 75%;
