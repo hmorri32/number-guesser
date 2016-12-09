@@ -1,64 +1,59 @@
 var guessInput = document.getElementById('guess');
 var submitBTN = document.getElementById('submit');
 var clearBTN = document.getElementById('clear-input');
-var lastGuessWas = document.getElementById('lastGuessWas');
-var lastGuessNum = document.getElementById('lastGuessNum');
-var outcomeText = document.getElementById('outcomeText');
+var lastGuessWas = document.getElementById('last-guess-was');
+var lastGuessNum = document.getElementById('last-guess-num');
+var outcomeText = document.getElementById('outcome-text');
 var resetBTN = document.getElementById('reset');
+var newMin = document.getElementById('new-min');
+var newMax = document.getElementById('new-max');
+var resetNew = document.getElementById('reset-new');
+var min = 0;
+var max = 100;
 var randomNumber;
+// fires up random number on page load
+window.onload = randomNumber = Math.floor(Math.random() * 100 + 1);
+//
+console.log(randomNumber);
+var userGuess = parseInt(guessInput.value);
+resetNew.disabled = true;
 resetBTN.disabled = true;
 clearBTN.disabled = true;
 
-// Change input stuff
-var newMin = document.getElementById('new-min');
-var newMax = document.getElementById('new-max');
-var resetNew = document.getElementById('resetNew');
-var min = 0;
-var max = 100;
-resetNew.disabled = true;
 
-// For the second submit button i decided to make.
-//
-// var submitBTN2 = document.getElementById('submit-2');
-// submitBTN2.disabled = true;
-
-var guessTWO = document.getElementById('guess-2');
-
-// window on load Generate new number on load and then console.logs it
-window.onload = randomNumber = Math.floor(Math.random() * 100 + 1);
-console.log(randomNumber);
-
-// event listener for that submit button. parse makes it an integer.
 submitBTN.addEventListener('click', function(){
   var userGuess = parseInt(guessInput.value);
   resetBTN.disabled = false;
-  if (guessInput.value === ""){
-    return alert("Input an actual number pls.");
-  } else if (userGuess < 1 || userGuess > 100) {
-    return alert("Input a number between 1 and 100 pls.");
-  }
-
+  alertHelper();
   lastGuessNum.innerText = userGuess;
-  console.log(userGuess);
   lastGuessWas.innerText = "Your last guess was:"
+  userGuessHelper();
+});
+// Helper Functions for Submit Button
+function alertHelper() {
+  lastGuessNum.innerText = userGuess;
+  if (guessInput.value === ""){
+    alert("Input an actual number pls.");
+  } else if (userGuess < 1 || userGuess > 100) {
+    alert("Input a number between 1 and 100 pls.");
+  }
+};
+
+function userGuessHelper() {
   if (userGuess === randomNumber) {
     outcomeText.innerText = "... and that's exactly what I had in mind!";
-    return alert("Dassit!");
-    console.log("boom!");
+    alert("dassit!");
   } else if (userGuess < randomNumber) {
-    outcomeText.innerText = "... and it was too low. Try again.";
-    console.log('too low');
+    outcomeText.innerText = "... and it was too low. try again.";
   } else {
     outcomeText.innerText = "... and it was too high. Try again.";
-    console.log('too high');
   }
-});
+};
 
-// disable clear
+// disable clearBTN
 clearBTN.addEventListener('click', function(){
   guessInput.value = "";
   disableClearBTN();
-  console.log("Clear was clicked");
 });
 
 // Function helper that clears BTN and clear input
@@ -68,53 +63,31 @@ function disableClearBTN() {
   }
 };
 
-function disableResetNew() {
-  if (newMax.value === "") {
-    resetNew.disabled = true;
-  }
-};
-
-// FOr using the clever guy submit
-// submitBTN2.addEventListener('click', function(){
-//   var userGuess = parseInt(guessTWO.value);
-//   resetBTN.disabled = false;
-//   if (guessTWO.value === ""){
-//     return alert("Input an actual number pls.");
-//   } else if (userGuess < 1 || userGuess > 100) {
-//     return alert("Input a number between 1 and 100 pls.");
-//   }
-//
-//   lastGuessNum.innerText = userGuess;
-//   console.log(userGuess);
-//   lastGuessWas.innerText = "Your last guess was:"
-//   if (userGuess === randomNumber) {
-//     outcomeText.innerText = "... and that's exactly what I had in mind!";
-//     return alert("Dassit!");
-//     console.log("boom!");
-//   } else if (userGuess < randomNumber) {
-//     outcomeText.innerText = "... and it was too low. Try again.";
-//     console.log('too low');
-//   } else {
-//     outcomeText.innerText = "... and it was too high. Try again.";
-//     console.log('too high');
-//   }
-// });
-
 resetBTN.addEventListener('click', function(){
   randomNumber = Math.floor(Math.random() * 100 + 1);
-  resetBTN.disabled = true;
-  guessInput.value = "";
+  disableButtons();
+  resetInputFieldValue();
+  resetGuessText();
+  console.log(randomNumber);
+});
+// reset helper functions
+function resetGuessText (){
   outcomeText.innerText = "";
   lastGuessWas.innerText = "";
   lastGuessNum.innerText = "";
-  clearBTN.disabled = true;
-  console.log(randomNumber);
+}
+
+function resetInputFieldValue (){
+  guessInput.value = "";
   newMax.value = "";
   newMin.value = "";
+};
+
+function disableButtons (){
+  resetBTN.disabled = true;
+  clearBTN.disabled = true;
   resetNew.disabled = true;
-  // submitBTN2.disabled = true
-  // Reset game, get new random number, consolelog that shit empty input string, reset all btns.. etc.
-});
+};
 
 // CHANGE RANGE
 function changeRange (min, max) {
@@ -133,16 +106,15 @@ newMax.addEventListener('keyup', function() {
   console.log(randomNumber);
 });
 
+// reset new parameters
 resetNew.addEventListener('click', function(){
-  newMax.value = "";
-  newMin.value = "";
   randomNumber = Math.floor(Math.random() * 100 + 1);
   console.log(randomNumber);
+  clearOwnRangeSection();
   resetNew.disabled = true;
-  guessTWO.value = "";
-
 });
-// Key up for check for text in input
 
-// STUFF I COULD ALSO DO...
-// refactor probably.
+function clearOwnRangeSection (){
+  newMax.value = "";
+  newMin.value = "";
+}

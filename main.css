@@ -28,7 +28,6 @@ section {
 
 .container {
   margin: 20px auto;
-  /*text-align: center;*/
 }
 
 h2 {
@@ -37,10 +36,10 @@ h2 {
 }
 
 /*Input fields*/
+
 ._300 {
   width: 300px;
   text-align: center;
-  /*margin: inherit;*/
 }
 
 ._150 {
@@ -50,7 +49,7 @@ h2 {
 
 
 /*Guess*/
-#lastGuessNum {
+#last-guess-num {
   font-size: 75px;
   font-weight: 700;
   color: #ED458B;
