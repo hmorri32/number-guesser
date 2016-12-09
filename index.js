@@ -14,11 +14,15 @@ var randomNumber;
 // fires up random number on page load
 window.onload = randomNumber = Math.floor(Math.random() * 100 + 1);
 //
-console.log(randomNumber);
 var userGuess = parseInt(guessInput.value);
 resetNew.disabled = true;
 resetBTN.disabled = true;
 clearBTN.disabled = true;
+console.log(randomNumber);
+
+guessInput.addEventListener('keyup', function(){
+  clearBTN.disabled = false;
+});
 
 
 submitBTN.addEventListener('click', function(){
@@ -56,13 +60,14 @@ clearBTN.addEventListener('click', function(){
   disableClearBTN();
 });
 
-// Function helper that clears BTN and clear input
+// Function helper that clears input
 function disableClearBTN() {
   if (guessInput.value === "") {
     clearBTN.disabled = true;
   }
 };
 
+// reset everything
 resetBTN.addEventListener('click', function(){
   randomNumber = Math.floor(Math.random() * 100 + 1);
   disableButtons();
@@ -109,12 +114,29 @@ newMax.addEventListener('keyup', function() {
 // reset new parameters
 resetNew.addEventListener('click', function(){
   randomNumber = Math.floor(Math.random() * 100 + 1);
-  console.log(randomNumber);
   clearOwnRangeSection();
-  resetNew.disabled = true;
+  disableClearNewBtn();
+  console.log(randomNumber);
 });
 
 function clearOwnRangeSection (){
   newMax.value = "";
   newMin.value = "";
 }
+
+function disableClearNewBtn (){
+  resetNew.disabled = true;
+}
+
+// Input field keyup to enable Clear New Range btn
+newMin.addEventListener('keyup', function(){
+  resetNewRangeButton();
+});
+
+newMax.addEventListener('keyup', function(){
+  resetNewRangeButton();
+});
+// User range button helper
+function resetNewRangeButton() {
+  resetNew.disabled = false;
+};
