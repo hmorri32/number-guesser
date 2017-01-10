@@ -13,8 +13,11 @@ var max = 100;
 var randomNumber;
 // fires up random number on page load
 window.onload = randomNumber = Math.floor(Math.random() * 100 + 1);
-//
+
+console.log(guessInput.value)
+
 var userGuess = parseInt(guessInput.value);
+
 resetNew.disabled = true;
 resetBTN.disabled = true;
 clearBTN.disabled = true;
@@ -28,14 +31,14 @@ submitBTN.addEventListener('click', function(){
   var userGuess = parseInt(guessInput.value);
   resetBTN.disabled = false;
   alertHelper();
+  userGuessHelper();
   lastGuessNum.innerText = userGuess;
   lastGuessWas.innerText = "Your last guess was:"
-  userGuessHelper();
+  console.log(userGuess)
 });
 
 // Helper Functions for Submit Button
 function alertHelper() {
-  lastGuessNum.innerText = userGuess;
   if (guessInput.value === ""){
     alert("Input an actual number pls.");
   } else if (userGuess < 1 || userGuess > 100) {
@@ -44,6 +47,8 @@ function alertHelper() {
 };
 
 function userGuessHelper() {
+  var userGuess = parseInt(guessInput.value);
+
   if (userGuess === randomNumber) {
     outcomeText.innerText = "... and that's exactly what I had in mind!";
     alert("dassit!");
