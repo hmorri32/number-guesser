@@ -11,20 +11,21 @@ var resetNew = document.getElementById('reset-new');
 var min = 0;
 var max = 100;
 var randomNumber;
-// fires up random number on page load
 window.onload = randomNumber = Math.floor(Math.random() * 100 + 1);
-
-console.log(guessInput.value)
+console.log(randomNumber)
 
 var userGuess = parseInt(guessInput.value);
 
 resetNew.disabled = true;
 resetBTN.disabled = true;
 clearBTN.disabled = true;
+submitBTN.disabled = true;
 
 // Enables clear button after user inputs guess
+
 guessInput.addEventListener('keyup', function(){
   clearBTN.disabled = false;
+  submitBTN.disabled = false;
 });
 
 submitBTN.addEventListener('click', function(){
@@ -79,6 +80,7 @@ resetBTN.addEventListener('click', function(){
   resetInputFieldValue();
   resetGuessText();
 });
+
 // reset helper functions
 function resetGuessText (){
   outcomeText.innerText = "";
@@ -96,6 +98,8 @@ function disableButtons (){
   resetBTN.disabled = true;
   clearBTN.disabled = true;
   resetNew.disabled = true;
+  submitBTN.disabled = true;
+
 };
 
 // CHANGE RANGE
