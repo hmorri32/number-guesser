@@ -8,11 +8,18 @@ let resetBTN = document.getElementById("reset");
 let newMin = document.getElementById("new-min");
 let newMax = document.getElementById("new-max");
 let resetNew = document.getElementById("reset-new");
+let randomNumber = Math.floor(Math.random() * 100 + 1);
 let min = 0;
 let max = 100;
-let randomNumber = Math.floor(Math.random() * 100 + 1);
 let userGuess;
 console.log(randomNumber);
+
+const disableButtons = () => {
+  resetBTN.disabled = true;
+  clearBTN.disabled = true;
+  resetNew.disabled = true;
+  submitBTN.disabled = true;
+};
 
 (() => {
   disableButtons();
@@ -35,22 +42,6 @@ const updateDom = params => {
   lastGuessWas.innerText = "Your last guess was:";
 };
 
-guessInput.addEventListener("keyup", enableSubmitBtns);
-submitBTN.addEventListener("click", submit);
-clearBTN.addEventListener("click", clearStuff);
-resetBTN.addEventListener("click", resetGame);
-
-const userGuessHelper = () => {
-  let userGuess = parseInt(guessInput.value);
-  if (userGuess === randomNumber) {
-    outcomeText.innerText = "... and that's exactly what I had in mind!";
-  } else if (userGuess < randomNumber) {
-    outcomeText.innerText = "... and it was too low. try again.";
-  } else {
-    outcomeText.innerText = "... and it was too high. Try again.";
-  }
-};
-
 const clearStuff = () => {
   guessInput.value = "";
   clearBTN.disabled = true;
@@ -61,6 +52,17 @@ const resetGame = () => {
   disableButtons();
   resetInputFieldValue();
   resetGuessText();
+};
+
+const userGuessHelper = () => {
+  let userGuess = parseInt(guessInput.value);
+  if (userGuess === randomNumber) {
+    outcomeText.innerText = "... and that's exactly what I had in mind!";
+  } else if (userGuess < randomNumber) {
+    outcomeText.innerText = "... and it was too low. try again.";
+  } else {
+    outcomeText.innerText = "... and it was too high. Try again.";
+  }
 };
 
 const resetGuessText = () => {
@@ -74,14 +76,6 @@ const resetInputFieldValue = () => {
   newMax.value = "";
   newMin.value = "";
 };
-
-const disableButtons = () => {
-  resetBTN.disabled = true;
-  clearBTN.disabled = true;
-  resetNew.disabled = true;
-  submitBTN.disabled = true;
-};
-
 
 newMin.addEventListener("keyup", () => {
   min = parseInt(newMin.value);
@@ -105,8 +99,12 @@ const clearOwnRangeSection = () => {
 };
 
 const changeRange = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-const disableClearNewBtn = () => resetNew.disabled = true;
-const resetNewRangeButton = () => resetNew.disabled = false;
+const disableClearNewBtn = () => (resetNew.disabled = true);
+const resetNewRangeButton = () => (resetNew.disabled = false);
 
 newMin.addEventListener("keyup", () => resetNewRangeButton());
 newMax.addEventListener("keyup", () => resetNewRangeButton());
+guessInput.addEventListener("keyup", enableSubmitBtns);
+submitBTN.addEventListener("click", submit);
+clearBTN.addEventListener("click", clearStuff);
+resetBTN.addEventListener("click", resetGame);
