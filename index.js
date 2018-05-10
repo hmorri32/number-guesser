@@ -1,17 +1,17 @@
-var guessInput = document.getElementById("guess");
-var submitBTN = document.getElementById("submit");
-var clearBTN = document.getElementById("clear-input");
-var lastGuessWas = document.getElementById("last-guess-was");
-var lastGuessNum = document.getElementById("last-guess-num");
-var outcomeText = document.getElementById("outcome-text");
-var resetBTN = document.getElementById("reset");
-var newMin = document.getElementById("new-min");
-var newMax = document.getElementById("new-max");
-var resetNew = document.getElementById("reset-new");
-var min = 0;
-var max = 100;
-var randomNumber = Math.floor(Math.random() * 100 + 1);
-var userGuess;
+let guessInput = document.getElementById("guess");
+let submitBTN = document.getElementById("submit");
+let clearBTN = document.getElementById("clear-input");
+let lastGuessWas = document.getElementById("last-guess-was");
+let lastGuessNum = document.getElementById("last-guess-num");
+let outcomeText = document.getElementById("outcome-text");
+let resetBTN = document.getElementById("reset");
+let newMin = document.getElementById("new-min");
+let newMax = document.getElementById("new-max");
+let resetNew = document.getElementById("reset-new");
+let min = 0;
+let max = 100;
+let randomNumber = Math.floor(Math.random() * 100 + 1);
+let userGuess;
 console.log(randomNumber);
 
 (() => {
@@ -29,7 +29,7 @@ const submit = () => {
 };
 
 const updateDom = params => {
-  var userGuess = parseInt(guessInput.value);
+  let userGuess = parseInt(guessInput.value);
   resetBTN.disabled = false;
   lastGuessNum.innerText = userGuess;
   lastGuessWas.innerText = "Your last guess was:";
@@ -41,7 +41,7 @@ clearBTN.addEventListener("click", clearStuff);
 resetBTN.addEventListener("click", resetGame);
 
 const userGuessHelper = () => {
-  var userGuess = parseInt(guessInput.value);
+  let userGuess = parseInt(guessInput.value);
   if (userGuess === randomNumber) {
     outcomeText.innerText = "... and that's exactly what I had in mind!";
   } else if (userGuess < randomNumber) {
