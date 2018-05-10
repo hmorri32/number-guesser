@@ -82,9 +82,6 @@ const disableButtons = () => {
   submitBTN.disabled = true;
 };
 
-const changeRange = (min, max) => {
-  return Math.floor(Math.random() * (max - min)) + min;
-};
 
 newMin.addEventListener("keyup", () => {
   min = parseInt(newMin.value);
@@ -105,21 +102,11 @@ resetNew.addEventListener("click", () => {
 const clearOwnRangeSection = () => {
   newMax.value = "";
   newMin.value = "";
-}
+};
 
-const disableClearNewBtn = () => {
-  resetNew.disabled = true;
-}
+const changeRange = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+const disableClearNewBtn = () => resetNew.disabled = true;
+const resetNewRangeButton = () => resetNew.disabled = false;
 
-// Input field keyup to enable Clear New Range btn
-newMin.addEventListener("keyup", () => {
-  resetNewRangeButton();
-});
-
-newMax.addEventListener("keyup", () => {
-  resetNewRangeButton();
-});
-// User range button helper
-const resetNewRangeButton = () => {
-  resetNew.disabled = false;
-}
+newMin.addEventListener("keyup", () => resetNewRangeButton());
+newMax.addEventListener("keyup", () => resetNewRangeButton());
